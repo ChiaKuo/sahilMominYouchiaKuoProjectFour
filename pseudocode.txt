@@ -10,7 +10,7 @@ Harry Potter Adventures
 - Upon button click, hide form  and house information.
 - changes the background image to fit the scenario
 - get question and answer pair.
-- get other 3 answer options (use endpoit API for random selection)
+- get other 3 answer options (use endpoint API for random selection)
 - sort the answer array to randomize the display of options
 - display question and answer options
 
