@@ -1,0 +1,29 @@
+Harry Potter Adventures
+
+- Display a landing page with the app heading, "Harry Potter Adventures", and a brief overview of what the user can do  with the app.
+- Display a form asking the user for their first name and last name.
+- A button that will sort the user into their house (Slytherin, Gryffindor, Hufflepuff, Ravenclaw)
+- Upon button click, make an API Request to display house information, notable members, house badge
+- Change the theme colors to match the colors associated with that house (both from endpoint: houses).
+
+1. A button to start the sequence of scenarios/tasks.
+- Upon button click, hide form  and house information.
+- changes the background image to fit the scenario
+- get question and answer pair.
+- get other 3 answer options (use endpoit API for random selection)
+- sort the answer array to randomize the display of options
+- display question and answer options
+
+2. On click to submit, 
+- if answer is wrong, popup text to show user it is not the correct answer
+- if answer is right, popup what happens in the story.
+- Submit button changes to next
+- Go to 1.
+- Repeat until the story is over.
+
+3. Display conclusion page
+- change background image
+- popup the ending story 
+- change the button to restart adventure. 
+
+4. On click, refresh the page.
