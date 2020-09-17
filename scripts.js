@@ -1,4 +1,5 @@
 const potterApp = {};
+// potterApp.command = "";
 potterApp.key = '$2a$10$giwowS/BIXhApClXp86ptu2X/k4gC80zFZM8sxnDRlUSReHJnH1JO';
 potterApp.url = 'https://www.potterapi.com/v1/';
 potterApp.spells = [];
