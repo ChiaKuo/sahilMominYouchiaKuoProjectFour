@@ -1,0 +1,45 @@
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    background: url(../assets/headerImage.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin: 1rem;
+    h1 {
+        text-align: center;
+        margin: 2rem;
+    }
+    p {
+        max-width: 76.8rem;
+        margin: 0 auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: rgba(192, 192, 192, 0.8);
+    }
+}
+
+.introPage {
+    margin: 2rem 0;
+    text-align: center;
+    form {
+        input {
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        input[type="submit"] {
+            background-color: $bodyBack;
+            font-weight: 600;
+        }
+    }
+}
+
+.housePage {
+    img {
+        max-width: ;
+    }
+}

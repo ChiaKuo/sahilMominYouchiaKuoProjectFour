@@ -1,3 +1,9 @@
-body {
-    background-color: silver;
-}
+// declaring variables
+$bodyBack: #c0c0c0;
+
+$fontHead: 'Roboto Slab', serif;
+// $fontContent: 
+
+@import "_setup";
+@import "_main";
+@import "_mediaQueries";
