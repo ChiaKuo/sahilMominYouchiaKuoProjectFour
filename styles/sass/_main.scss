@@ -7,6 +7,20 @@ body {
     background-repeat: no-repeat;
 }
 
+button {
+    background-color: $bodyBack;
+    padding: 1rem;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+button:hover,
+button:focus {
+    color: $bodyBack;
+    background-color: #000;
+}
+
 header {
     margin: 1rem;
     h1 {
@@ -18,7 +32,7 @@ header {
         margin: 0 auto;
         padding: 1rem;
         border-radius: 10px;
-        background-color: rgba(192, 192, 192, 0.8);
+        background-color: $textBack;
     }
 }
 
@@ -30,16 +44,47 @@ header {
             border-radius: 1rem;
             padding: 1rem;
             margin: 1rem;
+            border: 2px solid #000;
+        }
+        input:hover,
+        input:focus {
+            background-color: $textBack;
         }
         input[type="submit"] {
             background-color: $bodyBack;
+            border: 2px solid #000;
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            color: $bodyBack;
+            background-color: #000;
         }
     }
 }
 
-.housePage {
+.house {
+    margin: 1rem auto;
+    max-width: 76.8rem;
+    text-align: center;
     img {
-        max-width: ;
+        margin: 1rem auto;
+        max-width: 50rem;
+        min-width: 15rem;
+        width: 20%;
     }
+    .text {
+        background-color: $textBack;
+        text-align: left;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+}
+// .gryffindor,
+.slytherin,
+.ravenclaw,
+.hufflepuff {
+    display: none;
 }

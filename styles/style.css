@@ -287,6 +287,22 @@ body {
   background-repeat: no-repeat;
 }
 
+button {
+  background-color: #c0c0c0;
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  color: #c0c0c0;
+  background-color: #000;
+}
+
 header {
   margin: 1rem;
 }
@@ -313,9 +329,51 @@ header p {
   border-radius: 1rem;
   padding: 1rem;
   margin: 1rem;
+  border: 2px solid #000;
+}
+
+.introPage form input:hover,
+.introPage form input:focus {
+  background-color: rgba(192, 192, 192, 0.8);
 }
 
 .introPage form input[type="submit"] {
   background-color: #c0c0c0;
+  border: 2px solid #000;
   font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.introPage form input[type="submit"]:hover,
+.introPage form input[type="submit"]:focus {
+  color: #c0c0c0;
+  background-color: #000;
+}
+
+.house {
+  margin: 1rem auto;
+  max-width: 76.8rem;
+  text-align: center;
+}
+
+.house img {
+  margin: 1rem auto;
+  max-width: 50rem;
+  min-width: 15rem;
+  width: 20%;
+}
+
+.house .text {
+  background-color: rgba(192, 192, 192, 0.8);
+  text-align: left;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.slytherin,
+.ravenclaw,
+.hufflepuff {
+  display: none;
 }
