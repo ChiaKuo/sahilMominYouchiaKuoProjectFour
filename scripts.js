@@ -73,22 +73,30 @@ potterApp.sortHat = $.ajax({
     method: 'GET',
     dataType: 'json',
 });
+
+potterApp.getSorted = () => {
+    $( "#sort" ).submit(function( event ) {
+        event.preventDefault(event);
+        if ($("#firstName").val() == '' || $("#lastName").val() == "" ) {
+            alert('Fields are empty!');
+        } else {
+            potterApp.sortHat.then((res) => {
+                $(`.${res.toLowerCase()}`).css("display", "flex");
+                $(".startAdventure").css("display", "block");
+                
+            })
+            // used to disable resubmitting form, lock input text
+            $("#sort input[type='submit]'").attr("disabled", true);
+            $("#sort input[type='name']").attr("disabled", true);
+        }
+    });
+}
 // potterApp.getSpells();
 // potterApp.getCharacters();
 potterApp.init = function() {
-$( "#sort" ).submit(function( event ) {
-    event.preventDefault(event);
-    if ($("#firstName").val() == '' || $("#lastName").val() == '' ) {
-        alert('Fields are empty!');
-    } else {
-        potterApp.sortHat.then((res) => {
-            $(`.${res.toLowerCase()}`).css("display", "block");
-            $("#sort").attr('disabled', true);
-        })
-    }
-});
+    potterApp.getSorted();
+    
 }
 $(document).ready(function(){
 potterApp.init();
 });
-
