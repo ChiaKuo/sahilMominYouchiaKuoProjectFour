@@ -325,10 +325,24 @@ header p {
   text-align: center;
 }
 
+.introPage form {
+  margin: 0 auto;
+  max-width: 78rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .introPage form input {
+  width: clamp(30rem, 46%, 35rem);
   border-radius: 1rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: 2rem 2%;
   border: 2px solid #000;
 }
 
@@ -352,12 +366,16 @@ header p {
 }
 
 .house {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 1rem auto;
   max-width: 76.8rem;
   text-align: center;
 }
 
 .house img {
+  width: 25%;
   margin: 1rem auto;
   max-width: 50rem;
   min-width: 15rem;
@@ -365,15 +383,41 @@ header p {
 }
 
 .house .text {
+  width: 65%;
   background-color: rgba(192, 192, 192, 0.8);
   text-align: left;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
 }
 
+.startAdventure {
+  display: none;
+  min-width: 30rem;
+  text-align: center;
+}
+
+.endingPage,
+.gryffindor,
 .slytherin,
 .ravenclaw,
-.hufflepuff {
+.hufflepuff,
+.scenarioPage {
+  display: none;
+}
+
+.endingText {
+  max-width: 76.8rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(192, 192, 192, 0.8);
+}
+
+.endingPage {
+  text-align: center;
+}
+
+footer {
   display: none;
 }
