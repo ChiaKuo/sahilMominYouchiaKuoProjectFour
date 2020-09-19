@@ -1,9 +1,61 @@
 const potterApp = {};
+potterApp.scenarios = [
+    {
+        question: `It's the day of the first task, and you're as ready as you will ever be. Waiting in the tent, listening to the crowd's screams and the roars of the dragon, horrible pictures start forming in your mind. You shake your head in frustration and attempt to focus on the one spell that you practiced since you received Professor Moody's advice.
+        "Annnnnd give it up for the Hogwarts Champion: ${firstName} ${lastName}!"
+        In no time at all, your name is called. You slowly make your way to the stadium, where hundreds of students are cheering and jeering your name.
+        At this point, you don't even care. Directly within your field of vision was the Hungarian Horntail. Over fifty feet long, covered in black scales, and with a tail covered in lethal spikes, you instead notice the gleaming golden egg nested within the dragon egg pile.
+        "3....2....1....Begin!"
+        The whistle is blown. With every fiber of being, you raise your wand and bellow the following incantation:`,
+        answer: ["accio"],
+        
+    },
+    {
+        question: "",
+        answer: ""
+    },
+    {
+        question: "",
+        answer: ""
+    },
+    {
+        question: "",
+        answer: ""
+    },
+    {
+        question: "",
+        answer: ""
+    }
+]
+
 // potterApp.command = "";
 potterApp.key = '$2a$10$giwowS/BIXhApClXp86ptu2X/k4gC80zFZM8sxnDRlUSReHJnH1JO';
 potterApp.url = 'https://www.potterapi.com/v1/';
 potterApp.spells = [];
 potterApp.characters = [];
+potterApp.fourOptions = [];
+potterApp.name = {firstName: "", lastName: ""};
+// potterApp.charmsArray = potterApp.spells.filter(spell => spell.type == "Charm");
+// potterApp.profArray = potterApp.characters.filter(char => char.role == "Professor");
+
+potterApp.generateAnswers = function() {
+    for (let i = 0; i < 4; i++) {
+        potterApp.populateArray(potterApp.fourOptions);
+    }
+}
+
+potterApp.populateArray = function(array) {
+    // we need to work on this
+    const number = Math.floor(Math.random() * charmsArray.length);
+    const length = array.length;
+    for (let i = 0; i < length; i++) {
+        if (number == array[i] ) {
+            quizApp.populateArray(array);
+        }
+    }
+    array.push(number);
+}
+
 
 
 potterApp.getSpells = function () {
@@ -54,20 +106,6 @@ potterApp.getCharacters = function () {
     })
 }
 
-// potterApp.getHouses = function () {
-//     $.ajax({
-//         url: `${potterApp.url}houses`,
-//         method: 'GET',
-//         dataType: 'json',
-//         data: {
-//             key: potterApp.key,
-//             format: 'json',
-//         }
-//     }).then((res) => {
-//         res.forEach(element => potterApp.houses.push(element)
-//         )
-//     })
-// }
 
 potterApp.sortHat = $.ajax({
     url: `${potterApp.url}sortingHat`,
@@ -84,7 +122,10 @@ potterApp.getSorted = () => {
             potterApp.sortHat.then((res) => {
                 $(`.${res.toLowerCase()}`).css("display", "flex");
                 $(".startAdventure").css("display", "block");
-                $(".studentHouse").text(res)
+                $(".studentHouse").text(res);
+                potterApp.name.firstName = $("#firstName").val();
+                potterApp.name.lastName = $("#lastName").val();
+                console.log(potterApp.name);
                 
             })
             // used to disable resubmitting form, lock input text
@@ -118,5 +159,22 @@ potterApp.init = function() {
     potterApp.begin();
 }
 $(document).ready(function(){
-potterApp.init();
+    potterApp.init();
 });
+
+
+
+// potterApp.getHouses = function () {
+//     $.ajax({
+//         url: `${potterApp.url}houses`,
+//         method: 'GET',
+//         dataType: 'json',
+//         data: {
+//             key: potterApp.key,
+//             format: 'json',
+//         }
+//     }).then((res) => {
+//         res.forEach(element => potterApp.houses.push(element)
+//         )
+//     })
+// }
