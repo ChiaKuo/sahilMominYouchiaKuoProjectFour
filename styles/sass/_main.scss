@@ -94,7 +94,7 @@ header {
     }
 }
 
-.startAdventure {
+.startAdventure, .beginScenario {
     display: none;
     margin-bottom: 2rem;
     min-width: 30rem;
@@ -111,12 +111,28 @@ header {
     // }
 }
 
+.preStoryPage {
+    p, blockquote {
+        // display: none;
+        max-width: 76.8rem;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $textBack;
+    }
+    .studentHouse {
+        font-weight: bold;
+    }
+}
+
+
 .endingPage,
 .gryffindor,
 .slytherin,
 .ravenclaw,
 .hufflepuff,
-.scenarioPage {
+.scenarioPage,
+.preStoryPage {
     display: none;
 }
 

@@ -5,6 +5,7 @@ potterApp.url = 'https://www.potterapi.com/v1/';
 potterApp.spells = [];
 potterApp.characters = [];
 
+
 potterApp.getSpells = function () {
     $.ajax({
         url: `${potterApp.url}spells`,
@@ -78,24 +79,36 @@ potterApp.getSorted = () => {
     $( "#sort" ).submit(function( event ) {
         event.preventDefault(event);
         if ($("#firstName").val() == '' || $("#lastName").val() == "" ) {
-            alert('Fields are empty!');
+            alert('Please fill in your full name!');
         } else {
             potterApp.sortHat.then((res) => {
                 $(`.${res.toLowerCase()}`).css("display", "flex");
                 $(".startAdventure").css("display", "block");
+                $(".studentHouse").text(res)
                 
             })
             // used to disable resubmitting form, lock input text
-            $("#sort input[type='submit]'").attr("disabled", true);
-            $("#sort input[type='name']").attr("disabled", true);
+            $("#sort input[type='submit'], #sort input[type='name']").attr("disabled", true);
         }
     });
 }
+
+potterApp.startAdventure = () => {
+    $(".startAdventure button").click((event) => {
+        event.preventDefault(event);
+        console.log('click')
+        $(".preStoryPage, .beginScenario").css("display", "block");
+        $(".housePage, .introPage, header p").css("display", "none");
+    })
+}
+
+
+
 // potterApp.getSpells();
 // potterApp.getCharacters();
 potterApp.init = function() {
     potterApp.getSorted();
-    
+    potterApp.startAdventure();
 }
 $(document).ready(function(){
 potterApp.init();
