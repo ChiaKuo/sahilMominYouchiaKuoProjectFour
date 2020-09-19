@@ -4,7 +4,6 @@ potterApp.key = '$2a$10$giwowS/BIXhApClXp86ptu2X/k4gC80zFZM8sxnDRlUSReHJnH1JO';
 potterApp.url = 'https://www.potterapi.com/v1/';
 potterApp.spells = [];
 potterApp.characters = [];
-potterApp.houses = [];
 
 potterApp.getSpells = function () {
     $.ajax({
@@ -54,36 +53,42 @@ potterApp.getCharacters = function () {
     })
 }
 
-potterApp.getHouses = function () {
-    $.ajax({
-        url: `${potterApp.url}houses`,
-        method: 'GET',
-        dataType: 'json',
-        data: {
-            key: potterApp.key,
-            format: 'json',
-        }
-    }).then((res) => {
-        res.forEach(element => potterApp.houses.push(element)
-        )
-    })
-}
+// potterApp.getHouses = function () {
+//     $.ajax({
+//         url: `${potterApp.url}houses`,
+//         method: 'GET',
+//         dataType: 'json',
+//         data: {
+//             key: potterApp.key,
+//             format: 'json',
+//         }
+//     }).then((res) => {
+//         res.forEach(element => potterApp.houses.push(element)
+//         )
+//     })
+// }
 
-potterApp.sortHat = function () {
-    $.ajax({
-        url: `${potterApp.url}sortingHat`,
-        method: 'GET',
-        dataType: 'json',
-        data: {
-            format: 'json',
-        }
-    }).then((res) => {
-        console.log(res)
-    })     
+potterApp.sortHat = $.ajax({
+    url: `${potterApp.url}sortingHat`,
+    method: 'GET',
+    dataType: 'json',
+});
+// potterApp.getSpells();
+// potterApp.getCharacters();
+potterApp.init = function() {
+$( "#sort" ).submit(function( event ) {
+    event.preventDefault(event);
+    if ($("#firstName").val() == '' || $("#lastName").val() == '' ) {
+        alert('Fields are empty!');
+    } else {
+        potterApp.sortHat.then((res) => {
+            $(`.${res.toLowerCase()}`).css("display", "block");
+            $("#sort").attr('disabled', true);
+        })
+    }
+});
 }
-
-potterApp.getSpells();
-potterApp.getCharacters();
-potterApp.getHouses();
-potterApp.sortHat();
+$(document).ready(function(){
+potterApp.init();
+});
 
