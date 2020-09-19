@@ -96,9 +96,15 @@ potterApp.getSorted = () => {
 potterApp.startAdventure = () => {
     $(".startAdventure button").click((event) => {
         event.preventDefault(event);
-        console.log('click')
         $(".preStoryPage, .beginScenario").css("display", "block");
         $(".housePage, .introPage, header p").css("display", "none");
+    })
+}
+
+potterApp.begin = () => {
+    $(".beginScenario button").click((event) => {
+        event.preventDefault(event);
+        $(".preStoryPage, .beginScenario").css("display", "none");
     })
 }
 
@@ -109,6 +115,7 @@ potterApp.startAdventure = () => {
 potterApp.init = function() {
     potterApp.getSorted();
     potterApp.startAdventure();
+    potterApp.begin();
 }
 $(document).ready(function(){
 potterApp.init();
