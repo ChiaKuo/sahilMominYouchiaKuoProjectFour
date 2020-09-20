@@ -29,8 +29,8 @@ potterApp.scenarios = [
 ]
 
 // potterApp.command = "";
-potterApp.key = '$2a$10$giwowS/BIXhApClXp86ptu2X/k4gC80zFZM8sxnDRlUSReHJnH1JO';
-potterApp.url = 'https://www.potterapi.com/v1/';
+potterApp.key = "$2a$10$giwowS/BIXhApClXp86ptu2X/k4gC80zFZM8sxnDRlUSReHJnH1JO";
+potterApp.url = "https://www.potterapi.com/v1/";
 potterApp.fourOptions = [];
 
 potterApp.generateAnswers = function(array, point) {
@@ -51,8 +51,8 @@ potterApp.populateArray = function(targetArray, fromArray, point) {
 
 potterApp.getCharacters = $.ajax({
     url: `${potterApp.url}characters`,
-    method: 'GET',
-    dataType: 'json',
+    method: "GET",
+    dataType: "json",
     data: {
         key: potterApp.key,
     }
@@ -60,8 +60,8 @@ potterApp.getCharacters = $.ajax({
 
 potterApp.getSpells = $.ajax({
     url: `${potterApp.url}spells`,
-    method: 'GET',
-    dataType: 'json',
+    method: "GET",
+    dataType: "json",
     data: {
         key: potterApp.key,
     }
@@ -69,8 +69,8 @@ potterApp.getSpells = $.ajax({
 
 potterApp.sortHat = $.ajax({
     url: `${potterApp.url}sortingHat`,
-    method: 'GET',
-    dataType: 'json',
+    method: "GET",
+    dataType: "json",
 });
 
 potterApp.preLoad = () => {
@@ -87,7 +87,7 @@ potterApp.getSorted = () => {
     $( "#sort" ).submit(function(event) {
         event.preventDefault(event);
         if ($("#firstName").val() == "" || $("#lastName").val() == "" ) {
-            alert('Please fill in your full name!');
+            alert("Please fill in your full name!");
         } else {
             potterApp.sortHat.then((res) => {
                 $(`.${res.toLowerCase()}`).css("display", "flex");
@@ -117,12 +117,18 @@ potterApp.begin = () => {
         event.preventDefault(event);
         $(".preStoryPage, .beginScenario").css("display", "none");
     })
-    
 }
 
 // potterApp.scenarioGenerate = () => {
-
+    // for (i = 0, i < potterApp.scenarios.length, i++) {
+        // promise statement
+        // $(".scenarioPage h2").text(potterApp.scenarios[i].question)
+        //  for (a = 0, a < potterApp.fourOptions.length, a++) {
+            // $(".option" + (a + 1)).text(potterApp.fourOptions[a])
+        // }
+    // }
 // }
+
 
 potterApp.init = function() {
     potterApp.preLoad();
