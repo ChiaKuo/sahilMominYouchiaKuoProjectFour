@@ -398,6 +398,16 @@ header p {
   text-align: center;
 }
 
+.endingPage,
+.gryffindor,
+.slytherin,
+.ravenclaw,
+.hufflepuff,
+.scenarioPage,
+.preStoryPage {
+  display: none;
+}
+
 .preStoryPage p, .preStoryPage blockquote {
   max-width: 76.8rem;
   margin: 2rem auto;
@@ -410,14 +420,37 @@ header p {
   font-weight: bold;
 }
 
-.endingPage,
-.gryffindor,
-.slytherin,
-.ravenclaw,
-.hufflepuff,
-.scenarioPage,
-.preStoryPage {
-  display: none;
+.scenarioPage {
+  max-width: 76.8rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(192, 192, 192, 0.8);
+}
+
+.scenarioPage h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.answerOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 3rem auto;
+}
+
+.answerOptions ul {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.answerOptions img {
+  width: 30%;
+  min-width: 15rem;
 }
 
 .endingText {

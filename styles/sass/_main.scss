@@ -28,7 +28,6 @@ header {
         margin: 2rem;
     }
     p {
-        // display: none;
         max-width: 76.8rem;
         margin: 0 auto;
         padding: 1rem;
@@ -38,7 +37,6 @@ header {
 }
 
 .introPage {
-    // display: none;
     margin: 2rem 0;
     text-align: center;
     form {
@@ -99,32 +97,7 @@ header {
     margin-bottom: 2rem;
     min-width: 30rem;
     text-align: center;
-    // .hvr-ripple-out {
-    //     margin: .4em;
-    //     padding: 1em;
-    //     cursor: pointer;
-    //     background: #e1e1e1;
-    //     text-decoration: none;
-    //     color: #666;
-    //     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    //     -webkit-font-smoothing: antialiased;
-    // }
 }
-
-.preStoryPage {
-    p, blockquote {
-        // display: none;
-        max-width: 76.8rem;
-        margin: 2rem auto;
-        padding: 1rem;
-        border-radius: 10px;
-        background-color: $textBack;
-    }
-    .studentHouse {
-        font-weight: bold;
-    }
-}
-
 
 .endingPage,
 .gryffindor,
@@ -136,6 +109,44 @@ header {
     display: none;
 }
 
+.preStoryPage {
+    p, blockquote {
+        max-width: 76.8rem;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $textBack;
+    }
+    .studentHouse {
+        font-weight: bold;
+    }
+}
+
+.scenarioPage {
+    max-width: 76.8rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: $textBack;
+    h2 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}
+
+.answerOptions {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem auto;
+    ul {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    img {
+        width: 30%;
+        min-width: 15rem;
+    }
+}
 .endingText {
     max-width: 76.8rem;
     margin: 2rem auto;
