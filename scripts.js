@@ -121,11 +121,15 @@ potterApp.begin = () => {
 
 // potterApp.scenarioGenerate = () => {
     // for (i = 0, i < potterApp.scenarios.length, i++) {
-        // promise statement
+        // $(".continue").css("display", "none");
         // $(".scenarioPage h2").text(potterApp.scenarios[i].question)
-        //  for (a = 0, a < potterApp.fourOptions.length, a++) {
+            //  for (a = 0, a < potterApp.fourOptions.length, a++) {
             // $(".option" + (a + 1)).text(potterApp.fourOptions[a])
-        // }
+            // }
+        // promise statement
+            // button listener for correct click {
+            // }.then $(".scenarioPage h2").text(potterApp.scenarios[i].end)
+            // $(".continue").css("display", "block");
     // }
 // }
 
