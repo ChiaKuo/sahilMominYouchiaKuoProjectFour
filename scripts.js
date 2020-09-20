@@ -116,10 +116,13 @@ potterApp.begin = () => {
     $(".beginScenario button").click((event) => {
         event.preventDefault(event);
         $(".preStoryPage, .beginScenario").css("display", "none");
-        potterApp.generateAnswers(potterApp.charmsArray,"spell")
     })
     
 }
+
+// potterApp.scenarioGenerate = () => {
+
+// }
 
 potterApp.init = function() {
     potterApp.preLoad();
