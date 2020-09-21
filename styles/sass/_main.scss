@@ -148,7 +148,16 @@ header {
         font-size: 2rem;
         font-weight: 400;
         li {
-            padding: 1rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            border-radius: 1rem;
+        }
+        li:hover,
+        li:focus,
+        li:active {
+            background-color: sandybrown;
         }
     }
     .wrongAnswerPrompt,

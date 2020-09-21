@@ -454,7 +454,18 @@ header p {
 }
 
 .answerOptions ul li {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+}
+
+.answerOptions ul li:hover,
+.answerOptions ul li:focus,
+.answerOptions ul li:active {
+  background-color: sandybrown;
 }
 
 .answerOptions .wrongAnswerPrompt,
