@@ -7,48 +7,80 @@ potterApp.name = {
 potterApp.declareScenario = (firstName, lastName) => {
     potterApp.scenarios = [
         {
-            question: `It's the day of the first task, and you're as ready as you will ever be. Waiting in the tent, listening to the crowd's screams and the roars of the dragon, horrible pictures start forming in your mind. You shake your head in frustration and attempt to focus on the one spell that you practiced since you received Professor Moody's advice.
-            "Annnnnd give it up for the Hogwarts Champion: ${firstName} ${lastName}!"
-            In no time at all, your name is called. You slowly make your way to the stadium, where hundreds of students are cheering and jeering your name.
-            At this point, you don't even care. Directly within your field of vision was the Hungarian Horntail. Over fifty feet long, covered in black scales, and with a tail covered in lethal spikes, you instead notice the gleaming golden egg nested within the dragon egg pile.
-            "3....2....1....Begin!"
-            The whistle is blown. With every fiber of being, you raise your wand and bellow the following incantation:`,
+            title: "Finding Dragons",
+            question: `<blockquote>"Got summat ter show yeh, meet me tonight at midnight at the back of me cabin."</blockquote>
+            <p>Professor Hagrid's words echoed in the back of your head, as you struggle to make sense of what you just saw.
+            Dragons. Three fully grown, enormous, vicious-looking dragons locked inside an enclosure fenced with thick planks of wood. 
+            You overheard the following conversation between Professor Hagrid and one of the dragon keepers:</p>
+            <blockquote>"Three... So it's one fer each o' the champions, is it? What've they gotta do - fight em?"</blockquote>
+            <blockquote>"Just get past them and grab the golden egg. We'll be on hand if it gets nasty, extinguishing spells at the ready."</blockquote>
+            <p>Retreating to your dormitory bed, you wonder how you're meant to get past a dragon armed only with a wand. 
+            The next day, you decide to ask around for help. Perhaps one of the other professors will lend a helping hand?</p>`,
+            answer: "Alastor Moody",
+            type: "name",
+            array: potterApp.q1Array,
+            prompt: "",
+            ending: `<blockquote>"${lastName}, I'm just going to give you some good, general advice. The first bit is - play to your strengths. The second piece is to use a nice, simple spell that will enable you to get what you need."</blockquote>
+            <p>You ponder Professor Moody's advice. For as long as you could remember, your greatest strength was your skill with a broomstick. To get past the dragon and retrieve the golden egg, your best bet would be in the air. To do this, you would need a broomstick. What spell could you use to ensure that this happens?</p>`
+        },
+        {
+            title: "The First Task",
+            question: `<p>It's the day of the first task, and you're as ready as you will ever be. Waiting in the tent, listening to the crowd's screams and the roars of the dragon, horrible pictures start forming in your mind. You shake your head in frustration and attempt to focus on the one spell that you practiced since you received Professor Moody's advice.</p>
+            <blockquote>"Annnnnd give it up for the Hogwarts Champion: ${firstName} ${lastName}!"</blockquote>
+            <p>In no time at all, your name is called. You slowly make your way to the stadium, where hundreds of students are cheering and jeering your name.
+            At this point, you don't even care. Directly within your field of vision was the Hungarian Horntail. Over fifty feet long, covered in black scales, and with a tail covered in lethal spikes, you instead notice the gleaming golden egg nested within the dragon egg pile.</p>
+            <blockquote>"3....2....1....Begin!"</blockquote>
+            <p>The whistle is blown. With every fiber of being, you raise your wand and bellow the following incantation:</p>`,
             answer: "Accio",
             type: "spell",
-            array: potterApp.charmsArray,
+            array: potterApp.q2Array,
             prompt: "",
-            ending: `"Accio!"
-            You cast the summoning charm, and wait, praying that your only hope for survival would come.
+            ending: `<blockquote>"Accio!"</blockquote>
+            <p>You cast the summoning charm, and wait, praying that your only hope for survival would come.
             There it was. Hurtling towards you from the castle, was your Firebolt: the top-of-the-line racing broom gifted to you upon achieving 12 Outstanding O.W.L.s. Stopping dead in mid-air beside you, you mount the broom.
-            Within 5 minutes, and to tumultuous applause, you seize the golden egg.
-            "Congratulations to ${firstName} ${lastName}, the quickest champion to get their egg!"
-            "A quick few words to the three of you. The golden eggs you're all holding, you will see that they open. You will need to solve the clue inside the egg - because it will tell you what the second task is, and enable you to prepare for it! All clear? Sure? Well off you go then!"
-            With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.`
+            Within 5 minutes, and to tumultuous applause, you seize the golden egg.</p>
+            <blockquote>"Congratulations to ${firstName} ${lastName}, the quickest champion to get their egg!"</blockquote>
+            <blockquote>"A quick few words to the three of you. The golden eggs you're all holding, you will see that they open. You will need to solve the clue inside the egg - because it will tell you what the second task is, and enable you to prepare for it! All clear? Sure? Well off you go then!"</blockquote>
+            <p>With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.</p>`
         },
         {
-            question: "",
-            answer: "",
+            title: "The Clue in the Egg",
+            question: `<p>You ask Moaning Myrtle, who tells you to open the egg in the water.
+            You hear the song, and you realize that your best friend has been taken.
+            The task is tomorrow, and you have no idea how to breathe underwater. Who do you talk to?</p>`,
+            answer: "Dobby",
             type: "name",
-            array: potterApp.profArray
+            array: potterApp.q3Array,
+            prompt: "",
+            ending: `<p>You go to the kitchens, where you look for Dobby, who might have some ideas. He claims to have overheard Professor Moody talking in the staff room about gillyweed. He promises to bring it to you, and tells you not to worry. You try to take his advice, but you can't sleep all night.</p>`
         },
         {
-            question: "",
-            answer: "",
-            type: "name",
-            array: potterApp.profArray
+            title: "The Second Task",
+            question: ``,
+            answer: "Relashio",
+            type: "spell",
+            array: potterApp.q4Array,
+            prompt: "",
+            ending: `<p>You repel the grindylows, approaching mermaid village, you see your best friend tied to the rock. You take a jagged rock and free them. Using your strength, feeling yourself transforming back, make it back up above the surface.</p>
+            <blockquote>"Congratulations to ${firstName} ${lastName} for being the first one back!  The Hogwarts champion has placed first twice now, and will hold the greatest advantage when it comes to the third task!"</blockquote>`
         },
         {
-            question: "",
-            answer: "",
-            type: "name",
-            array: potterApp.profArray
+            title: "The Third Task",
+            question: `<p>It's the day of the third task.
+            From a prior meeting, you met and was told it was a maze.
+            You practiced a lot of spells, and because you placed first in both events, you get a head start in the maze.
+            Moving through the maze, you repel various dark creatures, until you run into a dementor. What spell do you use?</p>`,
+            answer: "Expecto Patronum",
+            type: "spell",
+            array: potterApp.q5Array,
+            prompt: "",
+            ending: `<p>You repel the dementor. Slowly but surely, you make your way to the center of the maze, and see the gleaming trophy perched on a stand. Upon placing your hands on the trophy, you are teleported back to the entrance of the maze, where you are greeted by thunderous applause.</p>
+
+            <blockquote>"Congratulations to the winner, our Hogwarts Champion: ${firstName} ${lastName}!!!!"</blockquote>
+            
+            <p>You are lifted up by the crowd, chanting your name.
+            As they carry you back to the castle, you think to yourself, from the memories of tonight, you'd probably produce the world's greatest patronus.</p>`
         },
-        {
-            question: "",
-            answer: "",
-            type: "name",
-            array: potterApp.profArray
-        }
     ]
 }
 
@@ -99,11 +131,13 @@ potterApp.sortHat = $.ajax({
 
 potterApp.preLoad = () => {
     potterApp.getCharacters.then((res) => {
-        potterApp.profArray = res.filter(char => char.role != undefined && char.role.toLowerCase().includes("professor") && (char.deathEater == false || char.orderOfThePhoenix == true));
+        potterApp.q1Array = res.filter(char => char.role != undefined && char.role.toLowerCase().includes("professor") && (char.deathEater != true || char.orderOfThePhoenix == true));
+        potterApp.q3Array = res.filter(char => (char.species.toLowerCase().includes("human") || char.species.toLowerCase().includes("elf")) && char.deathEater != true);
     });
     potterApp.getSpells.then((res) => {
-        potterApp.charmsArray = res.filter(spell => spell.type.toLowerCase() == "charm");
-        potterApp.harmSpellsArray = res.filter(spell => spell.type.toLowerCase() == "curse" || spell.type.toLowerCase() == "hex");
+        potterApp.q2Array = res.filter(spell => spell.type.toLowerCase() == "charm");
+        potterApp.q4Array = res.filter(spell => spell.type.toLowerCase() == "spell" || spell.type.toLowerCase() == "hex");
+        potterApp.q5Array = res.filter(spell => spell.type.toLowerCase() == "spell" || spell.type.toLowerCase() == "charm");
     });
 }
 
@@ -148,23 +182,19 @@ potterApp.count = 0;
 potterApp.scenarioGenerate = () => {
     if (potterApp.count < potterApp.scenarios.length) {
         potterApp.generateAnswers(potterApp.scenarios[potterApp.count].array, potterApp.scenarios[potterApp.count].type);
-        $(".scenarioPage h2").text("");
+        $(".sceneText").html("");
         $("#sceneNext").css("display", "none");
         potterApp.rightAnswer(potterApp.count);
-        $(".scenarioPage h2").append(potterApp.scenarios[potterApp.count].question)
-             for (let a = 0; a < potterApp.fourOptions.length; a++) {
+        $(".sceneText").html(potterApp.scenarios[potterApp.count].title)
+        $(".sceneText").append(potterApp.scenarios[potterApp.count].question)
+            for (let a = 0; a < potterApp.fourOptions.length; a++) {
                 $(".option" + a).text(potterApp.fourOptions[a])
             }
             $(".scenarioPage").css("display", "block");
             potterApp.checkAnswer();
-
-        // promise statement
-            // button listener for correct click {
-            // }.then $(".scenarioPage h2").text(potterApp.scenarios[i].end)
-            // $(".continue").css("display", "block");
     } else if (potterApp.count >= potterApp.scenarios.length) {
         $(".scenarioPage").css("display", "none");
-        $(".endingPage").css("displlay", "block");
+        $(".endingPage").css("display", "block");
     }
 }
 
@@ -174,31 +204,27 @@ potterApp.rightAnswer = (scenarioIndex) => {
     if (potterApp.fourOptions.indexOf(answer) == -1) {
         potterApp.fourOptions[number] = answer;
     }
-    // debugger;
 }
 
 potterApp.checkAnswer = () => {
     $(".options li").on("click", function(e) {
         e.preventDefault();
         const answer = $(this).text();
-        // console.log(answer);
         if (answer === potterApp.scenarios[potterApp.count].answer) {
             const ending = potterApp.scenarios[potterApp.count].ending;
-            $(".scenarioPage h2").text(ending);
-            $("#sceneNext").css("display", "block");
-            potterApp.count++;
+            $(".wrongAnswerPrompt").html("");
+            $(".sceneText").html(ending);
+            $(".continueButton").html(`<button class="continue${potterApp.count}" id="sceneNext">Continue</button>`);
             potterApp.nextScene();
-        } else {
-            $(".answerOptions p").text("Wrong Answer!");
-
+        } else if (answer != potterApp.scenarios[potterApp.count].answer) {
+            $(".wrongAnswerPrompt").html("<p>Wrong Answer!</p>");
         }
     })
 }
 
 potterApp.nextScene = () => {
-
-    $("#sceneNext").on("click", function() {
-
+    $(".continue" + potterApp.count).on("click", function() {
+        potterApp.count++;
         potterApp.scenarioGenerate();
     })
 }

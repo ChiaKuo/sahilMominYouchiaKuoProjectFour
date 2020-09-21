@@ -420,15 +420,13 @@ header p {
   font-weight: bold;
 }
 
-.scenarioPage {
+.scenarioPage .sceneText,
+.scenarioPage .answerOptions {
   max-width: 76.8rem;
   margin: 2rem auto;
   padding: 1rem;
   border-radius: 10px;
   background-color: rgba(192, 192, 192, 0.8);
-}
-
-.scenarioPage h2 {
   font-size: 2rem;
   font-weight: 500;
 }
@@ -440,17 +438,37 @@ header p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 3rem auto;
 }
 
 .answerOptions ul {
+  min-width: 15rem;
+  width: 30%;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
+.answerOptions ul li {
+  padding: 1rem;
+}
+
+.answerOptions .wrongAnswerPrompt,
 .answerOptions img {
+  max-height: 100%;
   width: 30%;
   min-width: 15rem;
+}
+
+.answerOptions .wrongAnswerPrompt {
+  text-align: center;
+  background-repeat: no-repeat;
+  color: firebrick;
+  font-weight: 700;
 }
 
 .endingText {

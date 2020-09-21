@@ -123,28 +123,45 @@ header {
 }
 
 .scenarioPage {
-    max-width: 76.8rem;
-    margin: 2rem auto;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: $textBack;
-    h2 {
+    .sceneText,
+    .answerOptions {
+        max-width: 76.8rem;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $textBack;
         font-size: 2rem;
         font-weight: 500;
     }
+
 }
 
 .answerOptions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     margin: 3rem auto;
     ul {
+        min-width: 15rem;
+        width: 30%;
         font-size: 2rem;
-        font-weight: 500;
+        font-weight: 400;
+        li {
+            padding: 1rem;
+        }
     }
+    .wrongAnswerPrompt,
     img {
+        max-height: 100%;
         width: 30%;
         min-width: 15rem;
+    }
+    .wrongAnswerPrompt {
+        text-align: center;
+        background-repeat: no-repeat;
+        color: firebrick;
+        font-weight: 700;
     }
 }
 .endingText {
