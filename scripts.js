@@ -126,7 +126,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             <p>You are mobbed by the cheering crowd of students. Lifting you up on their shoulders they chant:</p>
             <blockquote>"${firstName}! ${firstName}!"</blockquote>
             <p>As you are carried away by the crowd, memories of the school year flood into your head. Despite knowing that this is all over, deep inside you know it's just the beginning.</p>`,
-            image: "url(./assets/thirdTask.jpg)",
+            image: "url(./assets/lastTask.jpg)",
         },
     ]
 }
