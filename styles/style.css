@@ -317,7 +317,11 @@ header {
 
 header h1 {
   text-align: center;
-  margin: 2rem;
+  max-width: 76.8rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(192, 192, 192, 0.8);
 }
 
 header p {
@@ -397,6 +401,10 @@ header p {
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
+}
+
+.house .text span {
+  font-weight: bolder;
 }
 
 .startAdventure,

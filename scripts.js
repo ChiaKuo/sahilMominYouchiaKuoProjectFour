@@ -1,13 +1,14 @@
 // Image Credits
 // Pre Story: https://www.deviantart.com/captainsquirel/art/Goblet-of-Fire-585652043
 // Q1: https://pm1.narvii.com/6767/60e5364d4b547e15af12d8d63e51bd08edf2d468v2_hq.jpg
-// Q2:
-// Q3:
-// Q4:
-// Q5:
-// Ending:
+// Q2: https://www.wizardingworld.com/
+// Q3: https://www.wizardingworld.com/
+// Q4: https://www.wizardingworld.com/
+// Q5: https://www.wizardingworld.com/
+// Ending: https://www.wizardingworld.com/
 
 const potterApp = {};
+
 potterApp.name = {
     firstName: "",
     lastName: ""
@@ -52,7 +53,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             <blockquote>"Congratulations to ${firstName} ${lastName}, the quickest champion to get their egg!"</blockquote>
             <blockquote>"A quick few words to the three of you. The golden eggs you're all holding, you will see that they open. You will need to solve the clue inside the egg - because it will tell you what the second task is, and enable you to prepare for it! All clear? Sure? Well off you go then!"</blockquote>
             <p>With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.</p>`,
-            image: "url(./assets/fourDragons.png)",
+            image: "url(./assets/firstTask.jpg)",
         },
         {
             title: "<h2>The Clue in the Egg</h2>",
@@ -64,7 +65,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             array: potterApp.q3Array,
             prompt: `<p>I'm sorry ${lastName}, but I'm not supposed to tell you anything pertaining to the upcoming task!</p>`,
             ending: `<p>You go to the kitchens, where you look for Dobby, who might have some ideas. He claims to have overheard Professor Moody talking in the staff room about gillyweed. He promises to bring it to you, and tells you not to worry. You try to take his advice, but you can't sleep all night.</p>`,
-            image: "url(./assets/fourDragons.png)",
+            image: "url(./assets/prefectBathroom.jpg)",
         },
         {
             title: "<h2>The Second Task</h2>",
@@ -77,7 +78,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             prompt: `<p>Grindlylows shrugs off your feeble spell. Try something else!</p>`,
             ending: `<p>You repel the grindylows, approaching mermaid village, you see your best friend tied to the rock. You take a jagged rock and free them. Using your strength, feeling yourself transforming back, make it back up above the surface.</p>
             <blockquote>"Congratulations to ${firstName} ${lastName} for being the first one back!  The Hogwarts champion has placed first twice now, and will hold the greatest advantage when it comes to the third task!"</blockquote>`,
-            image: "url(./assets/fourDragons.png)",
+            image: "url(./assets/secondTask.jpg)",
         },
         {
             title: "<h2>The Third Task</h2>",
@@ -93,7 +94,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             <blockquote>"Congratulations to the winner, our Hogwarts Champion: ${firstName} ${lastName}!!!!"</blockquote>
             <p>You are lifted up by the crowd, chanting your name.
             As they carry you back to the castle, you think to yourself, from the memories of tonight, you'd probably produce the world's greatest patronus.</p>`,
-            image: "url(./assets/fourDragons.png)",
+            image: "url(./assets/thirdTask.jpg)",
         },
     ]
 }
@@ -211,6 +212,7 @@ potterApp.scenarioGenerate = () => {
     } else if (potterApp.count >= potterApp.scenarios.length) {
         $(".scenarioPage").css("display", "none");
         $(".endingPage").css("display", "block");
+        $("body").css("background-image", "url(./assets/ending.png)");
     }
 }
 

@@ -26,7 +26,11 @@ header {
     margin: 1rem;
     h1 {
         text-align: center;
-        margin: 2rem;
+        max-width: 76.8rem;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $textBack;
     }
     p {
         max-width: 76.8rem;
@@ -92,6 +96,9 @@ header {
         margin: 1rem auto;
         padding: 1rem;
         border-radius: 10px;
+        span {
+            font-weight: bolder;
+        }
     }
 }
 
