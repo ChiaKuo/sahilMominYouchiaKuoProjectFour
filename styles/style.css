@@ -251,7 +251,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
   line-height: 1.4;
   font-family: "Roboto Slab", serif;
   background-color: #c0c0c0;
@@ -339,7 +339,7 @@ header p {
 }
 
 .introPage form input {
-  width: clamp(30rem, 46%, 35rem);
+  width: clamp(25rem, 46%, 35rem);
   border-radius: 1rem;
   padding: 1rem;
   margin: 2rem 2%;
@@ -366,9 +366,6 @@ header p {
 }
 
 .house {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin: 1rem auto;
   max-width: 76.8rem;
   text-align: center;
@@ -391,11 +388,15 @@ header p {
   border-radius: 10px;
 }
 
-.startAdventure, .beginScenario {
+.startAdventure,
+.beginScenario {
   display: none;
   margin-bottom: 2rem;
-  min-width: 30rem;
   text-align: center;
+}
+
+.beginScenario button {
+  min-width: 25rem;
 }
 
 .endingPage,
@@ -427,7 +428,7 @@ header p {
   padding: 1rem;
   border-radius: 10px;
   background-color: rgba(192, 192, 192, 0.8);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 500;
 }
 
@@ -449,13 +450,15 @@ header p {
 .answerOptions ul {
   min-width: 15rem;
   width: 30%;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 400;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .answerOptions ul li {
   padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
+  margin: clamp(0, 0.05vw, 0.5rem) 0;
   text-decoration: underline;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -470,12 +473,15 @@ header p {
 
 .answerOptions .wrongAnswerPrompt,
 .answerOptions img {
-  max-height: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 100%;
   width: 30%;
   min-width: 15rem;
 }
 
 .answerOptions .wrongAnswerPrompt {
+  border: none;
   text-align: center;
   background-repeat: no-repeat;
   color: firebrick;
@@ -498,6 +504,24 @@ header p {
   text-align: center;
 }
 
+.playAgain {
+  min-width: 25rem;
+}
+
 footer {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .introPage form input {
+    margin: 1rem 2%;
+  }
+  .house {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .house .text {
+    margin: 1rem 0;
+    width: 100%;
+  }
 }

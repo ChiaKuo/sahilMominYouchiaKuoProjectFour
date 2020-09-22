@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+    .introPage {
+        form {
+            // display: block;
+            input {
+                margin: 1rem 2%;
+            }
+        }
+    }
+    .house {
+        flex-wrap: wrap;
+        .text {
+            margin: 1rem 0;
+            width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 464px) {
+
+}

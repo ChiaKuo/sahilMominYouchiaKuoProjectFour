@@ -19,9 +19,10 @@ potterApp.declareScenario = (firstName, lastName) => {
             answer: "Alastor Moody",
             type: "name",
             array: potterApp.q1Array,
-            prompt: "",
+            prompt: `I'm sorry ${lastName}, but I'm not supposed to tell you about how to go about completing the first task! Perhaps some library time would help?`,
             ending: `<blockquote>"${lastName}, I'm just going to give you some good, general advice. The first bit is - play to your strengths. The second piece is to use a nice, simple spell that will enable you to get what you need."</blockquote>
-            <p>You ponder Professor Moody's advice. For as long as you could remember, your greatest strength was your skill with a broomstick. To get past the dragon and retrieve the golden egg, your best bet would be in the air. To do this, you would need a broomstick. What spell could you use to ensure that this happens?</p>`
+            <p>You ponder Professor Moody's advice. For as long as you could remember, your greatest strength was your skill with a broomstick. To get past the dragon and retrieve the golden egg, your best bet would be in the air. To do this, you would need a broomstick. What spell could you use to ensure that this happens?</p>`,
+            image: "",
         },
         {
             title: "The First Task",
@@ -34,14 +35,15 @@ potterApp.declareScenario = (firstName, lastName) => {
             answer: "Accio",
             type: "spell",
             array: potterApp.q2Array,
-            prompt: "",
+            prompt: `<p>The spell you cast is ineffective against the Horntail, which draws ever closer. Try something else!</p>`,
             ending: `<blockquote>"Accio!"</blockquote>
             <p>You cast the summoning charm, and wait, praying that your only hope for survival would come.
             There it was. Hurtling towards you from the castle, was your Firebolt: the top-of-the-line racing broom gifted to you upon achieving 12 Outstanding O.W.L.s. Stopping dead in mid-air beside you, you mount the broom.
             Within 5 minutes, and to tumultuous applause, you seize the golden egg.</p>
             <blockquote>"Congratulations to ${firstName} ${lastName}, the quickest champion to get their egg!"</blockquote>
             <blockquote>"A quick few words to the three of you. The golden eggs you're all holding, you will see that they open. You will need to solve the clue inside the egg - because it will tell you what the second task is, and enable you to prepare for it! All clear? Sure? Well off you go then!"</blockquote>
-            <p>With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.</p>`
+            <p>With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.</p>`,
+            image: ""
         },
         {
             title: "The Clue in the Egg",
@@ -51,18 +53,22 @@ potterApp.declareScenario = (firstName, lastName) => {
             answer: "Dobby",
             type: "name",
             array: potterApp.q3Array,
-            prompt: "",
-            ending: `<p>You go to the kitchens, where you look for Dobby, who might have some ideas. He claims to have overheard Professor Moody talking in the staff room about gillyweed. He promises to bring it to you, and tells you not to worry. You try to take his advice, but you can't sleep all night.</p>`
+            prompt: `<p>I'm sorry ${lastName}, but I'm not supposed to tell you anything pertaining to the upcoming task!</p>`,
+            ending: `<p>You go to the kitchens, where you look for Dobby, who might have some ideas. He claims to have overheard Professor Moody talking in the staff room about gillyweed. He promises to bring it to you, and tells you not to worry. You try to take his advice, but you can't sleep all night.</p>`,
+            image: "",
         },
         {
             title: "The Second Task",
-            question: ``,
+            question: `With Gillyweed from dobby, you enter the lake
+            Describe the transformation process.
+            Run into Grindylows, they start crowding you..What do you do?`,
             answer: "Relashio",
             type: "spell",
             array: potterApp.q4Array,
-            prompt: "",
+            prompt: `<p>Grindlylows shrugs off your feeble spell. Try something else!</p>`,
             ending: `<p>You repel the grindylows, approaching mermaid village, you see your best friend tied to the rock. You take a jagged rock and free them. Using your strength, feeling yourself transforming back, make it back up above the surface.</p>
-            <blockquote>"Congratulations to ${firstName} ${lastName} for being the first one back!  The Hogwarts champion has placed first twice now, and will hold the greatest advantage when it comes to the third task!"</blockquote>`
+            <blockquote>"Congratulations to ${firstName} ${lastName} for being the first one back!  The Hogwarts champion has placed first twice now, and will hold the greatest advantage when it comes to the third task!"</blockquote>`,
+            image: "",
         },
         {
             title: "The Third Task",
@@ -73,13 +79,12 @@ potterApp.declareScenario = (firstName, lastName) => {
             answer: "Expecto Patronum",
             type: "spell",
             array: potterApp.q5Array,
-            prompt: "",
+            prompt: `<p>Your spell is ineffective against the Dementor, which draws ever closer. Try something else!</p>`,
             ending: `<p>You repel the dementor. Slowly but surely, you make your way to the center of the maze, and see the gleaming trophy perched on a stand. Upon placing your hands on the trophy, you are teleported back to the entrance of the maze, where you are greeted by thunderous applause.</p>
-
             <blockquote>"Congratulations to the winner, our Hogwarts Champion: ${firstName} ${lastName}!!!!"</blockquote>
-            
             <p>You are lifted up by the crowd, chanting your name.
-            As they carry you back to the castle, you think to yourself, from the memories of tonight, you'd probably produce the world's greatest patronus.</p>`
+            As they carry you back to the castle, you think to yourself, from the memories of tonight, you'd probably produce the world's greatest patronus.</p>`,
+            image: "",
         },
     ]
 }
@@ -181,6 +186,7 @@ potterApp.begin = () => {
 potterApp.count = 0;
 potterApp.scenarioGenerate = () => {
     if (potterApp.count < potterApp.scenarios.length) {
+        $(".answerOptions").css("display", "flex");
         potterApp.generateAnswers(potterApp.scenarios[potterApp.count].array, potterApp.scenarios[potterApp.count].type);
         $(".sceneText").html("");
         $("#sceneNext").css("display", "none");
@@ -211,13 +217,14 @@ potterApp.checkAnswer = () => {
         e.preventDefault();
         const answer = $(this).text();
         if (answer === potterApp.scenarios[potterApp.count].answer) {
+            $(".answerOptions").css("display", "none");
             const ending = potterApp.scenarios[potterApp.count].ending;
             $(".wrongAnswerPrompt").html("");
             $(".sceneText").html(ending);
             $(".continueButton").html(`<button class="continue${potterApp.count}" id="sceneNext">Continue</button>`);
             potterApp.nextScene();
         } else if (answer != potterApp.scenarios[potterApp.count].answer) {
-            $(".wrongAnswerPrompt").html("<p>Wrong Answer!</p>");
+            $(".wrongAnswerPrompt").html(potterApp.scenarios[potterApp.count].prompt);
         }
     })
 }
