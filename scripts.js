@@ -1,3 +1,12 @@
+// Image Credits
+// Pre Story: https://www.deviantart.com/captainsquirel/art/Goblet-of-Fire-585652043
+// Q1: https://pm1.narvii.com/6767/60e5364d4b547e15af12d8d63e51bd08edf2d468v2_hq.jpg
+// Q2:
+// Q3:
+// Q4:
+// Q5:
+// Ending:
+
 const potterApp = {};
 potterApp.name = {
     firstName: "",
@@ -7,7 +16,7 @@ potterApp.name = {
 potterApp.declareScenario = (firstName, lastName) => {
     potterApp.scenarios = [
         {
-            title: "Finding Dragons",
+            title: "<h2>Finding Dragons</h2>",
             question: `<blockquote>"Got summat ter show yeh, meet me tonight at midnight at the back of me cabin."</blockquote>
             <p>Professor Hagrid's words echoed in the back of your head, as you struggle to make sense of what you just saw.
             Dragons. Three fully grown, enormous, vicious-looking dragons locked inside an enclosure fenced with thick planks of wood. 
@@ -22,10 +31,10 @@ potterApp.declareScenario = (firstName, lastName) => {
             prompt: `I'm sorry ${lastName}, but I'm not supposed to tell you about how to go about completing the first task! Perhaps some library time would help?`,
             ending: `<blockquote>"${lastName}, I'm just going to give you some good, general advice. The first bit is - play to your strengths. The second piece is to use a nice, simple spell that will enable you to get what you need."</blockquote>
             <p>You ponder Professor Moody's advice. For as long as you could remember, your greatest strength was your skill with a broomstick. To get past the dragon and retrieve the golden egg, your best bet would be in the air. To do this, you would need a broomstick. What spell could you use to ensure that this happens?</p>`,
-            image: "",
+            image: "url(./assets/fourDragons.jpg)",
         },
         {
-            title: "The First Task",
+            title: "<h2>The First Task</h2>",
             question: `<p>It's the day of the first task, and you're as ready as you will ever be. Waiting in the tent, listening to the crowd's screams and the roars of the dragon, horrible pictures start forming in your mind. You shake your head in frustration and attempt to focus on the one spell that you practiced since you received Professor Moody's advice.</p>
             <blockquote>"Annnnnd give it up for the Hogwarts Champion: ${firstName} ${lastName}!"</blockquote>
             <p>In no time at all, your name is called. You slowly make your way to the stadium, where hundreds of students are cheering and jeering your name.
@@ -43,10 +52,10 @@ potterApp.declareScenario = (firstName, lastName) => {
             <blockquote>"Congratulations to ${firstName} ${lastName}, the quickest champion to get their egg!"</blockquote>
             <blockquote>"A quick few words to the three of you. The golden eggs you're all holding, you will see that they open. You will need to solve the clue inside the egg - because it will tell you what the second task is, and enable you to prepare for it! All clear? Sure? Well off you go then!"</blockquote>
             <p>With these parting words, you leave for the castle and collapse in your bed, thankful to have kept all of your limbs.</p>`,
-            image: ""
+            image: "url(./assets/fourDragons.png)",
         },
         {
-            title: "The Clue in the Egg",
+            title: "<h2>The Clue in the Egg</h2>",
             question: `<p>You ask Moaning Myrtle, who tells you to open the egg in the water.
             You hear the song, and you realize that your best friend has been taken.
             The task is tomorrow, and you have no idea how to breathe underwater. Who do you talk to?</p>`,
@@ -55,10 +64,10 @@ potterApp.declareScenario = (firstName, lastName) => {
             array: potterApp.q3Array,
             prompt: `<p>I'm sorry ${lastName}, but I'm not supposed to tell you anything pertaining to the upcoming task!</p>`,
             ending: `<p>You go to the kitchens, where you look for Dobby, who might have some ideas. He claims to have overheard Professor Moody talking in the staff room about gillyweed. He promises to bring it to you, and tells you not to worry. You try to take his advice, but you can't sleep all night.</p>`,
-            image: "",
+            image: "url(./assets/fourDragons.png)",
         },
         {
-            title: "The Second Task",
+            title: "<h2>The Second Task</h2>",
             question: `With Gillyweed from dobby, you enter the lake
             Describe the transformation process.
             Run into Grindylows, they start crowding you..What do you do?`,
@@ -68,10 +77,10 @@ potterApp.declareScenario = (firstName, lastName) => {
             prompt: `<p>Grindlylows shrugs off your feeble spell. Try something else!</p>`,
             ending: `<p>You repel the grindylows, approaching mermaid village, you see your best friend tied to the rock. You take a jagged rock and free them. Using your strength, feeling yourself transforming back, make it back up above the surface.</p>
             <blockquote>"Congratulations to ${firstName} ${lastName} for being the first one back!  The Hogwarts champion has placed first twice now, and will hold the greatest advantage when it comes to the third task!"</blockquote>`,
-            image: "",
+            image: "url(./assets/fourDragons.png)",
         },
         {
-            title: "The Third Task",
+            title: "<h2>The Third Task</h2>",
             question: `<p>It's the day of the third task.
             From a prior meeting, you met and was told it was a maze.
             You practiced a lot of spells, and because you placed first in both events, you get a head start in the maze.
@@ -84,7 +93,7 @@ potterApp.declareScenario = (firstName, lastName) => {
             <blockquote>"Congratulations to the winner, our Hogwarts Champion: ${firstName} ${lastName}!!!!"</blockquote>
             <p>You are lifted up by the crowd, chanting your name.
             As they carry you back to the castle, you think to yourself, from the memories of tonight, you'd probably produce the world's greatest patronus.</p>`,
-            image: "",
+            image: "url(./assets/fourDragons.png)",
         },
     ]
 }
@@ -169,6 +178,7 @@ potterApp.getSorted = () => {
 potterApp.startAdventure = () => {
     $(".startAdventure button").click((event) => {
         event.preventDefault(event);
+        $("body").css("background-image", "url(./assets/gobletOfFire.png)");
         $(".preStoryPage, .beginScenario").css("display", "block");
         $(".housePage, .introPage, header p").css("display", "none");
     })
@@ -177,7 +187,6 @@ potterApp.startAdventure = () => {
 potterApp.begin = () => {
     $(".beginScenario button").click((event) => {
         event.preventDefault(event);
-        // potterApp.generateAnswers(potterApp.charmsArray, "spell");
         $(".preStoryPage, .beginScenario").css("display", "none");
         potterApp.scenarioGenerate();
     })
@@ -186,6 +195,7 @@ potterApp.begin = () => {
 potterApp.count = 0;
 potterApp.scenarioGenerate = () => {
     if (potterApp.count < potterApp.scenarios.length) {
+        $("body").css("background-image", potterApp.scenarios[potterApp.count].image);
         $(".answerOptions").css("display", "flex");
         potterApp.generateAnswers(potterApp.scenarios[potterApp.count].array, potterApp.scenarios[potterApp.count].type);
         $(".sceneText").html("");

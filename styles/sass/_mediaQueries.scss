@@ -14,6 +14,24 @@
             width: 100%;
         }
     }
+
+    .answerOptions {
+        justify-content: center;
+        ul,
+        .wrongAnswerPrompt {
+            margin: 0.5rem;
+            min-width: 20rem;
+            width: 46%;
+        }
+        img {
+            display: none;
+        }
+        .wrongAnswerPrompt {
+            padding: 0 0.5rem;
+            background-color: firebrick;
+            color: #FFF;
+        }
+    }
 }
 
 

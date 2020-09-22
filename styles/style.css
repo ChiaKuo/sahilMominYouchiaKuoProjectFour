@@ -253,7 +253,9 @@ html {
 body {
   font-size: clamp(1.2rem, 2.2vw, 2rem);
   line-height: 1.4;
-  font-family: "Roboto Slab", serif;
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+  letter-spacing: 1.2px;
   background-color: #c0c0c0;
 }
 
@@ -278,6 +280,11 @@ li {
   list-style: none;
 }
 
+h1,
+h2 {
+  font-family: "Cinzel", serif;
+}
+
 body {
   min-height: 100vh;
   margin: 0 auto;
@@ -295,6 +302,7 @@ button {
   font-weight: 600;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  font-family: "Cinzel", serif;
 }
 
 button:hover,
@@ -344,6 +352,8 @@ header p {
   padding: 1rem;
   margin: 2rem 2%;
   border: 2px solid #000;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
 }
 
 .introPage form input:hover,
@@ -357,6 +367,7 @@ header p {
   font-weight: 600;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  font-family: "Cinzel", serif;
 }
 
 .introPage form input[type="submit"]:hover,
@@ -432,6 +443,11 @@ header p {
   font-weight: 500;
 }
 
+.scenarioPage .sceneText h2 {
+  text-align: center;
+  font-family: "Cinzel", serif;
+}
+
 .answerOptions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -485,7 +501,7 @@ header p {
   text-align: center;
   background-repeat: no-repeat;
   color: firebrick;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .continueButton {
@@ -523,5 +539,24 @@ footer {
   .house .text {
     margin: 1rem 0;
     width: 100%;
+  }
+  .answerOptions {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .answerOptions ul,
+  .answerOptions .wrongAnswerPrompt {
+    margin: 0.5rem;
+    min-width: 20rem;
+    width: 46%;
+  }
+  .answerOptions img {
+    display: none;
+  }
+  .answerOptions .wrongAnswerPrompt {
+    padding: 0 0.5rem;
+    background-color: firebrick;
+    color: #FFF;
   }
 }

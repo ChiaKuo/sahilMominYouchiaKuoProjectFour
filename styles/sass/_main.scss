@@ -14,6 +14,7 @@ button {
     border-radius: 10px;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-family: $fontHead;
 }
 button:hover,
 button:focus {
@@ -51,6 +52,8 @@ header {
             padding: 1rem;
             margin: 2rem 2%;
             border: 2px solid #000;
+            font-family: $fontContent;
+            font-weight: 600;
         }
         input:hover,
         input:focus {
@@ -61,6 +64,7 @@ header {
             border: 2px solid #000;
             font-weight: 600;
             transition: all 0.3s ease;
+            font-family: $fontHead;
         }
         input[type="submit"]:hover,
         input[type="submit"]:focus {
@@ -135,8 +139,12 @@ header {
         font-size: clamp(1.5rem, 3vw, 2.2rem);
         font-weight: 500;
     }
-
+    .sceneText h2 {
+        text-align: center;
+        font-family: $fontHead;
+    }
 }
+
 
 .answerOptions {
     display: flex;
@@ -177,7 +185,7 @@ header {
         text-align: center;
         background-repeat: no-repeat;
         color: firebrick;
-        font-weight: 700;
+        font-weight: 500;
     }
 }
 
