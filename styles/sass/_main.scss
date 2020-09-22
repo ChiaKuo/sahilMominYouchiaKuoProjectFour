@@ -1,12 +1,4 @@
-body {
-    min-height: 100vh;
-    margin: 0 auto;
-    background: url(../assets/headerImage.jpg);
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
+// styles all buttons
 button {
     background-color: $bodyBack;
     padding: 1rem;
@@ -22,6 +14,7 @@ button:focus {
     background-color: #000;
 }
 
+// header styles
 header {
     margin: 1rem;
     h1 {
@@ -41,6 +34,7 @@ header {
     }
 }
 
+// introPage section
 .introPage {
     margin: 2rem 0;
     text-align: center;
@@ -78,6 +72,7 @@ header {
     }
 }
 
+// styles house information section
 .house {
     margin: 1rem auto;
     max-width: 76.8rem;
@@ -102,6 +97,7 @@ header {
     }
 }
 
+// styles begining of scenarios
 .startAdventure, 
 .beginScenario {
     display: none;
@@ -112,6 +108,7 @@ header {
     min-width: 25rem;
 }
 
+// hiding all sections not required during start
 .endingPage,
 .gryffindor,
 .slytherin,
@@ -122,6 +119,7 @@ header {
     display: none;
 }
 
+// styles preStory section
 .preStoryPage {
     p, blockquote {
         max-width: 76.8rem;
@@ -135,6 +133,7 @@ header {
     }
 }
 
+// styles scenario pages
 .scenarioPage {
     .sceneText,
     .answerOptions {
@@ -152,7 +151,7 @@ header {
     }
 }
 
-
+// styles answer option part
 .answerOptions {
     display: flex;
     justify-content: space-between;
@@ -176,7 +175,8 @@ header {
         li:hover,
         li:focus,
         li:active {
-            background-color: sandybrown;
+            background-color: #000;
+            color: $bodyBack;
         }
     }
     .wrongAnswerPrompt,
@@ -200,6 +200,7 @@ header {
     text-align: center;
 }
 
+// styles ending style texts
 .endingText {
     max-width: 76.8rem;
     margin: 2rem auto;
@@ -208,15 +209,36 @@ header {
     background-color: $textBack;
 }
 
+// styles ending page
 .endingPage {
     text-align: center;
 }
 .playAgain {
     min-width: 25rem;
+    margin-bottom: 3rem;
 }
 
 footer {
-    display: none;
+    p {
+        text-align: center;
+        max-width: 76.8rem;
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin: 0 auto;
+        background-color: $textBack;
+        .juno {
+            margin: 0 0.2rem;
+            padding: 0.2rem;
+            border-radius: 5px;
+            color: firebrick;
+            transition: all 0.3s ease;
+        }
+        .juno:hover,
+        .juno:focus {
+            color: $bodyBack;
+            background-color: firebrick;
+        }
+    }
 }
 
 
